@@ -1,0 +1,31 @@
+public class ArrayQuestions {
+
+    static void reversearray(int arr[], int start, int end ){
+        // the actual code is this 
+        int temp;
+        if(start>=end) return;
+        temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        reversearray(arr, start+1, end-1);
+    }
+    
+    
+    // code block to print out the values of an array
+    static void printarray(int arr[], int size){
+       for(int num: arr){
+            System.out.print(num+" ");
+          }
+          System.out.println("");
+    }
+    
+    
+    public static void main(String[] args){
+        int arr[] = {45,98,65,32,77};
+        printarray(arr,5);
+        reversearray(arr,0,4);
+        System.out.println("Reversed array is: ");
+        printarray(arr,5);
+
+    }
+}
